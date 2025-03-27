@@ -27,6 +27,11 @@
 
 - (CGFloat)fd_systemFittingHeightForConfiguratedCell:(UITableViewCell *)cell {
     CGFloat contentViewWidth = CGRectGetWidth(self.frame);
+    if (@available(iOS 13.0, *)) {
+        if (self.style == UITableViewStyleInsetGrouped) {
+            contentViewWidth = contentViewWidth - 2*16;
+        }
+    }
     
     CGRect cellBounds = cell.bounds;
     cellBounds.size.width = contentViewWidth;
