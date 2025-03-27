@@ -29,7 +29,7 @@
     CGFloat contentViewWidth = CGRectGetWidth(self.frame);
     if (@available(iOS 13.0, *)) {
         if (self.style == UITableViewStyleInsetGrouped) {
-            contentViewWidth = contentViewWidth - 2*16;
+            contentViewWidth = contentViewWidth - self.layoutMargins.left - self.layoutMargins.right;
         }
     }
     
